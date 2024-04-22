@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+#header{
+	background-color: green;
+	height: 100px;
+	display:flex;
+	align-items: center;
+	margin: 0px !important;
+	
+}
+
+#logo:hover{	
+	cursor: pointer;
+}
+
+#login{
+	width:100px;
+	height:100%;
+	align-items: center;
+	display: inline-flex;
+}
+
+#cart{
+	width:100px;
+	height:100%;
+	align-items: center;
+	display: inline-flex;
+}
+
+#history{
+	width:120px;
+	height:100%;
+	align-items: center;
+	display: inline-flex;
+}
