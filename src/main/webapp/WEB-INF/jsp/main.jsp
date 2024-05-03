@@ -10,14 +10,15 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 	<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>	
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossOrigin="anonymous"></script>
-	<link href="/css/templates.css" rel="stylesheet">
-	<link href="/css/main.css" rel="stylesheet">
+	<link href="/vegven/css/templates.css" rel="stylesheet">
+	<link href="/vegven/css/main.css" rel="stylesheet">
 </head>
 <body>
 	<div class="m-1 d-flex" id="header">
-		<form class='mr-auto' action="/">
+		
+		<form class='mr-auto' action="/vegven/">
 			
-			<div id="logo"><img src="/img/Vegven.png" style="width:200px;height:100%;"></div>
+			<div id="logo"><img src="/vegven/img/Vegven.png" style="width:200px;height:100%;"></div>
 		</form>
 		<form action="">
 			<div class="btn" id='login'><span>login</span><i class="bi bi-person-circle mb-2 ml-1"></i></div>
@@ -30,7 +31,7 @@
 		</form>
 	</div>
 	<div id='body'>
-		<img id='horpic' src="/img/horizonPic.png">
+		<img id='horpic' src="/vegven/img/horizonPic.png">
 		<div id='goods' class='mt-4'>商品列表
 			<form action="">
 				
