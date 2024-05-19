@@ -12,50 +12,57 @@ import jakarta.persistence.Id;
 public class History {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer Historyid;
-	private Integer BuyUserid;
-	private Integer Productid;
-	private Integer Amount;
+	private Integer historyid;
+	private Integer buyUserid;
+	private Integer productid;
+	private Integer amount;
 	@Column(columnDefinition = "DATETIME NOT NULL")
-	private Date Historytime;
+	private Date historytime;
 	public History(Integer historyid, Integer buyUserid, Integer productid, Integer amount, Date historytime) {
 		super();
-		Historyid = historyid;
-		BuyUserid = buyUserid;
-		Productid = productid;
-		Amount = amount;
-		Historytime = historytime;
+		this.historyid = historyid;
+		this.buyUserid = buyUserid;
+		this.productid = productid;
+		this.amount = amount;
+		this.historytime = historytime;
 	}
 	public Integer getHistoryid() {
-		return Historyid;
+		return historyid;
 	}
 	public void setHistoryid(Integer historyid) {
-		Historyid = historyid;
+		this.historyid = historyid;
 	}
 	public Integer getBuyUserid() {
-		return BuyUserid;
+		return buyUserid;
 	}
 	public void setBuyUserid(Integer buyUserid) {
-		BuyUserid = buyUserid;
+		this.buyUserid = buyUserid;
 	}
 	public Integer getProductid() {
-		return Productid;
+		return productid;
 	}
 	public void setProductid(Integer productid) {
-		Productid = productid;
+		this.productid = productid;
 	}
 	public Integer getAmount() {
-		return Amount;
+		return amount;
 	}
 	public void setAmount(Integer amount) {
-		Amount = amount;
+		this.amount = amount;
 	}
 	public Date getHistorytime() {
-		return Historytime;
+		return historytime;
 	}
 	public void setHistorytime(Date historytime) {
-		Historytime = historytime;
+		this.historytime = historytime;
 	}
+	@Override
+	public String toString() {
+		return "History [historyid=" + historyid + ", buyUserid=" + buyUserid + ", productid=" + productid + ", amount="
+				+ amount + ", historytime=" + historytime + "]";
+	}
+	
+	
 	
 	
 }

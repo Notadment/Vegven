@@ -12,59 +12,69 @@ import jakarta.persistence.Id;
 public class Production {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer Productid;
-	private String Product;
-	private Integer Amount;
-	private Integer Price;
+	private Integer productid;
+	@Column(columnDefinition = "VARCHAR(20)")
+	private String product;
+	@Column(columnDefinition = "int unsigned default 0")
+	private Integer amount;
+	@Column(columnDefinition = "int unsigned default 0")
+	private Integer price;
 	@Column(columnDefinition = "DATETIME NOT NULL")
-	private Date Shelvetime;
-	private String Details;
+	private Date shelvetime;
+	@Column(columnDefinition = "VARCHAR(2000)")
+	private String details;
 	public Production(Integer productid, String product, Integer amount, Integer price, Date shelvetime,
 			String details) {
 		super();
-		Productid = productid;
-		Product = product;
-		Amount = amount;
-		Price = price;
-		Shelvetime = shelvetime;
-		Details = details;
+		this.productid = productid;
+		this.product = product;
+		this.amount = amount;
+		this.price = price;
+		this.shelvetime = shelvetime;
+		this.details = details;
+	}
+	@Override
+	public String toString() {
+		return "Production [productid=" + productid + ", product=" + product + ", amount=" + amount + ", price=" + price
+				+ ", shelvetime=" + shelvetime + ", details=" + details + "]";
 	}
 	public Integer getProductid() {
-		return Productid;
+		return productid;
 	}
 	public void setProductid(Integer productid) {
-		Productid = productid;
+		this.productid = productid;
 	}
 	public String getProduct() {
-		return Product;
+		return product;
 	}
 	public void setProduct(String product) {
-		Product = product;
+		this.product = product;
 	}
 	public Integer getAmount() {
-		return Amount;
+		return amount;
 	}
 	public void setAmount(Integer amount) {
-		Amount = amount;
+		this.amount = amount;
 	}
 	public Integer getPrice() {
-		return Price;
+		return price;
 	}
 	public void setPrice(Integer price) {
-		Price = price;
+		this.price = price;
 	}
 	public Date getShelvetime() {
-		return Shelvetime;
+		return shelvetime;
 	}
 	public void setShelvetime(Date shelvetime) {
-		Shelvetime = shelvetime;
+		this.shelvetime = shelvetime;
 	}
 	public String getDetails() {
-		return Details;
+		return details;
 	}
 	public void setDetails(String details) {
-		Details = details;
+		this.details = details;
 	}
+	
 	
 	
 }

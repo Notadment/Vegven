@@ -12,50 +12,59 @@ import jakarta.persistence.Id;
 public class Sales {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer SaleId;
-	private Integer SaleProductId;
-	private Integer Discount;
-	private Integer SaleAmount;
+	private Integer saleid;
+	private Integer saleproductid;
+	private Integer discount;
+	@Column(columnDefinition = "int unsigned default 0")
+	private Integer saleamount;
 	@Column(columnDefinition = "DATETIME NOT NULL")
-	private Date StartTime;
-	public Sales(Integer saleId, Integer saleProductId, Integer discount, Integer saleAmount, Date startTime) {
+	private Date starttime;
+	public Sales(Integer saleid, Integer saleproductid, Integer discount, Integer saleamount, Date starttime) {
 		super();
-		SaleId = saleId;
-		SaleProductId = saleProductId;
-		Discount = discount;
-		SaleAmount = saleAmount;
-		StartTime = startTime;
+		this.saleid = saleid;
+		this.saleproductid = saleproductid;
+		this.discount = discount;
+		this.saleamount = saleamount;
+		this.starttime = starttime;
 	}
-	public Integer getSaleId() {
-		return SaleId;
+	public Integer getSaleid() {
+		return saleid;
 	}
-	public void setSaleId(Integer saleId) {
-		SaleId = saleId;
+	public void setSaleid(Integer saleid) {
+		this.saleid = saleid;
 	}
-	public Integer getSaleProductId() {
-		return SaleProductId;
+	public Integer getSaleproductid() {
+		return saleproductid;
 	}
-	public void setSaleProductId(Integer saleProductId) {
-		SaleProductId = saleProductId;
+	public void setSaleproductid(Integer saleproductid) {
+		this.saleproductid = saleproductid;
 	}
 	public Integer getDiscount() {
-		return Discount;
+		return discount;
 	}
 	public void setDiscount(Integer discount) {
-		Discount = discount;
+		this.discount = discount;
 	}
-	public Integer getSaleAmount() {
-		return SaleAmount;
+	public Integer getSaleamount() {
+		return saleamount;
 	}
-	public void setSaleAmount(Integer saleAmount) {
-		SaleAmount = saleAmount;
+	public void setSaleamount(Integer saleamount) {
+		this.saleamount = saleamount;
 	}
-	public Date getStartTime() {
-		return StartTime;
+	public Date getStarttime() {
+		return starttime;
 	}
-	public void setStartTime(Date startTime) {
-		StartTime = startTime;
+	public void setStarttime(Date starttime) {
+		this.starttime = starttime;
 	}
+	@Override
+	public String toString() {
+		return "Sales [saleid=" + saleid + ", saleproductid=" + saleproductid + ", discount=" + discount
+				+ ", saleamount=" + saleamount + ", starttime=" + starttime + "]";
+	}
+	
+	
+	
 	
 	
 	

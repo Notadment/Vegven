@@ -12,50 +12,57 @@ import jakarta.persistence.Id;
 public class Cart {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer Cartid;
-	private Integer Userid;
-	private Integer Productsid;
-	private Integer Cartamount;
+	private Integer cartid;
+	private Integer userid;
+	private Integer productsid;
+	private Integer cartamount;
 	@Column(columnDefinition = "DATETIME NOT NULL")
-	private Date Carttime;
+	private Date carttime;
 	public Cart(Integer cartid, Integer userid, Integer productsid, Integer cartamount, Date carttime) {
 		super();
-		Cartid = cartid;
-		Userid = userid;
-		Productsid = productsid;
-		Cartamount = cartamount;
-		Carttime = carttime;
+		this.cartid = cartid;
+		this.userid = userid;
+		this.productsid = productsid;
+		this.cartamount = cartamount;
+		this.carttime = carttime;
 	}
 	public Integer getCartid() {
-		return Cartid;
+		return cartid;
 	}
 	public void setCartid(Integer cartid) {
-		Cartid = cartid;
+		this.cartid = cartid;
 	}
 	public Integer getUserid() {
-		return Userid;
+		return userid;
 	}
 	public void setUserid(Integer userid) {
-		Userid = userid;
+		this.userid = userid;
 	}
 	public Integer getProductsid() {
-		return Productsid;
+		return productsid;
 	}
 	public void setProductsid(Integer productsid) {
-		Productsid = productsid;
+		this.productsid = productsid;
 	}
 	public Integer getCartamount() {
-		return Cartamount;
+		return cartamount;
 	}
 	public void setCartamount(Integer cartamount) {
-		Cartamount = cartamount;
+		this.cartamount = cartamount;
 	}
 	public Date getCarttime() {
-		return Carttime;
+		return carttime;
 	}
 	public void setCarttime(Date carttime) {
-		Carttime = carttime;
+		this.carttime = carttime;
 	}
+	@Override
+	public String toString() {
+		return "Cart [cartid=" + cartid + ", userid=" + userid + ", productsid=" + productsid + ", cartamount="
+				+ cartamount + ", carttime=" + carttime + "]";
+	}
+	
+	
 	
 	
 	
