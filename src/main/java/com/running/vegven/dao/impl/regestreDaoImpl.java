@@ -58,16 +58,33 @@ public class regestreDaoImpl implements RegesterDao {
 		}
 	}
 	@Override
-	public Userinf selectEmail(Userinf googleMail) {
-		// TODO Auto-generated method stub
-		return null;
+	public Userinf selectEmail(String email) {
+		String sql = "SELECT u.mail FROM Userinf u WHERE u.mail = :email";
+		String mails = "'"+email+"'";
+		System.out.println(mails);
+		TypedQuery<Userinf> query = entityManager.createQuery(sql, Userinf.class).
+				setParameter("email",mails);
+		try {
+			Userinf result = query.getSingleResult();
+			System.out.println(query);
+			return result;
+		} catch (NoResultException e) {
+			 System.out.println("No result found for mail: " + query);
+			 return null;
+		}
 	}
 	@Override
-	public Userinf selectPhone(Userinf phoneNum) {
-		// TODO Auto-generated method stub
-		return null;
+	public Userinf selectPhone(String phone) {
+		String sql = "SELECT u.phone FROM Userinf u WHERE u.phone = :phone";
+		TypedQuery<Userinf> query = entityManager.createQuery(sql, Userinf.class).
+				setParameter("phone", phone);
+		try {
+			Userinf result = query.getSingleResult();
+			System.out.println(phone);
+			return result;
+		} catch (NoResultException e) {
+			 System.out.println("No result found for phone: " + phone);
+			 return null;
+		}
 	}
-	
-	
-
 }

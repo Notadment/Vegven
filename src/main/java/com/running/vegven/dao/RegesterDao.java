@@ -10,6 +10,6 @@ public interface RegesterDao {
 	Result getRegesterUser(Userinf UserId);
 	Userinf selectAccount(String account);
 	Userinf selectPassword(String password);
-	Userinf selectEmail(Userinf googleMail);
-	Userinf selectPhone(Userinf phoneNum);
+	Userinf selectEmail(String email);
+	Userinf selectPhone(String phone);
 }

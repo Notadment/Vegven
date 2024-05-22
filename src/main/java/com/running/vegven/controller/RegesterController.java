@@ -75,7 +75,7 @@ public class RegesterController {
 	@RequestMapping(value="/verifyPassword",method = RequestMethod.POST)
 	@ResponseBody
 	public String verifyPassword(@RequestParam String password) {
-		String reg = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9_]{8,16}$";
+		String reg = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9]{8,16}$";
 		Pattern pattern = Pattern.compile(reg);
 		Matcher matcher = pattern.matcher(password);
 		if(matcher.matches()==false) {
@@ -85,39 +85,56 @@ public class RegesterController {
 			return "errorMatchPassword";
 		}else {
 			Userinf userinf = regesterService.selectPassword(password);
-			if(userinf != null) {
+			if(userinf == null) {
 //				model.put("sameAccount", "已有相同帳戶名稱");
-				return "errorPassword";
+				return "successPassword";
 			}else {
 //				model.put("errorAccount", "此名稱尚未被註冊");
-				return  "successPassword";
+				return  "errorPassword";
 			}
 			
 		}
 //		return "regester";
 	}
 //	
-//	@GetMapping("/VerifyEmail")
-//	public String verifyEmail(ModelMap model, @RequestParam String googleMail) {
-//		String userinf = regesterService.selectAccount(googleMail);
-//		if(userinf == null) {
+	@RequestMapping(value="/verifyEmail",method = RequestMethod.POST)
+	@ResponseBody
+	public String verifyEmail(@RequestParam String email) {
+		String reg = "^[0-9a-zA-Z]+@gmail\\.com$";
+		Pattern pattern = Pattern.compile(reg);
+		Matcher matcher = pattern.matcher(email);
+		if(matcher.matches()) {
+			String nonEmail = email.replace("@gmail.com", "");
+			Userinf userinf = regesterService.selectEmail(email);
+			if(userinf == null) {
 //			model.put("sameEmail", "密碼已被使用");
-//			return "regester";
-//		}else {
+				return "sucessEmail";
+			}else {
 //			model.put("sucessEmail", "此密碼可使用");
-//			return "regester";
-//		}		
-//	}
+				return "sameEmail";
+			}
+		}else {
+			return "errorMatchEmail";
+		}
+	}
 //	
-//	@GetMapping("/VerifyPhone")
-//	public String VerifyPhone(ModelMap model, @RequestParam String phoneNum) {
-//		String userinf = regesterService.selectAccount(phoneNum);
-//		if(userinf == null) {
+	@RequestMapping(value="/VerifyPhone",method = RequestMethod.POST)
+	@ResponseBody
+	public String VerifyPhone(@RequestParam String phone) {
+		String reg = "^09[0-9]{8}$";
+		Pattern pattern = Pattern.compile(reg);
+		Matcher matcher = pattern.matcher(phone);
+		if(matcher.matches()) {
+			Userinf userinf = regesterService.selectPhone(phone);
+			if(userinf != null) {
 //			model.put("samePhone", "此號碼已被使用");
-//			return "regester";
-//		}else {
+				return "samePhone";
+			}else {
 //			model.put("sucessPhone", "號碼可使用");
-//			return "regester";
-//		}		
-//	}
+				return "sucessPhone";
+			}
+		}else {
+			return "errorMatchPhone";
+		}
+	}
 }

@@ -52,15 +52,17 @@ public class RegesterServiceImpl implements RegesterService{
 		}
 
 	@Override
-	public String selectEmail(Userinf googleMail) {
-		// TODO Auto-generated method stub
-		return null;
+	@Transactional
+	public Userinf selectEmail(String email) {
+		Userinf rs = regesterDao.selectEmail(email);
+		return rs;
 	}
 
 	@Override
-	public String selectPhone(Userinf phoneNum) {
-		// TODO Auto-generated method stub
-		return null;
+	@Transactional
+	public Userinf selectPhone(String phone) {
+		Userinf rs = regesterDao.selectPhone(phone);
+		return rs;
 	}
 	
 	

@@ -9,6 +9,6 @@ public interface RegesterService {
 	Result getRegesterUser(Userinf UserId);
 	Userinf selectAccount(String account);
 	Userinf selectPassword(String password);
-	String selectEmail(Userinf googleMail);
-	String selectPhone(Userinf phoneNum);
+	Userinf selectEmail(String email);
+	Userinf selectPhone(String phone);
 }

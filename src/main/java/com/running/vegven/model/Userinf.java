@@ -15,13 +15,13 @@ public class Userinf {
 	private Integer userid;
 	@Column(columnDefinition = "VARCHAR(20) NOT NULL unique")
 	private String account;
-	@Column(columnDefinition = "VARCHAR(255)")
+	@Column(columnDefinition = "VARCHAR(255) NOT NULL unique")
 	private String password;
 	@Column(columnDefinition = "tinyint unsigned default 0")
 	private Integer gendar;
-	@Column(columnDefinition = "VARCHAR(20) NOT NULL unique")
+	@Column(columnDefinition = "VARCHAR(10) NOT NULL unique")
 	private String phone;
-	@Column(columnDefinition = "VARCHAR(150)")
+	@Column(columnDefinition = "VARCHAR(150) NOT NULL unique")
 	private String mail;
 	
 	@Column(columnDefinition = "int unsigned default 0")
@@ -30,7 +30,7 @@ public class Userinf {
 	private Date birth;
 	@Column(columnDefinition = "DATETIME NOT NULL")
 	private Date addtime;
-	
+	@Column(columnDefinition = "DATETIME NOT NULL")
 	private Date edittime;
 
 	public Integer getUserid() {

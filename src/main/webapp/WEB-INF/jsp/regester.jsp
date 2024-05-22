@@ -18,7 +18,7 @@
 				<div>
 					<form method="post" >
 					<!--onkeyup="VerifyAccount()"  這是原放在input內的東西-->
-						<span><input id="ac" type="text" name="account" placeholder="帳號" onblur="VerifyAccount()"></span>
+						<span><input id="ac" type="text" name="account" placeholder="帳號" onblur="VerifyAccount()" required="required"></span>
 						<br>
 						<font id="errorAccount" color="red"></font>
 						<font id="sucessAccount" color="green"></font>
@@ -28,38 +28,46 @@
 							
 				</div>
 				 <div>
-					<span><input id="pw" type="password" name="password" placeholder="密碼" onblur="VerifyPassword()"></span>
+					<span><input id="pw" type="password" name="password" placeholder="密碼" onblur="VerifyPassword()" required="required"></span>
 					<br>
 					<font id="errorPassword" color="red"></font>
 					<font id="successPassword" color="green"></font>
 					<br/>
 					<br/><br/>
 				</div>
+				<div>
+					<span><input id="againPW" type="password" name="password" placeholder="請再輸入一次密碼" onblur="matchAgainPassword()" required="required"></span>
+					<br>
+					<font id="errorMatchPassword" color="red"></font>
+					<font id="successMatchPassword" color="green"></font>
+					<br/>
+					<br/><br/>
+				</div>
 				 <div>
-					<span><input type="text" name="gender" placeholder="性別"></span>
+					<span><input type="text" name="gender" placeholder="性別" required="required"></span>
 					<br>
 					<br/>
 					<br/><br/>
 				</div>
 				<div>
-					<span><input type="date" name="birth" placeholder="生日"></span>
+					<span><input type="date" name="birth" placeholder="生日" required="required"></span>
 					<br>
 					<br/>
 					<br/><br/>
 				</div>
 				<div>
-					<span><input type="email" name="googleMail" placeholder="電子郵件"></span>
+					<span><input id="mails" type="email" name="email" placeholder="電子郵件" onblur="VerifyEmail()" required="required"></span>
 					<br>
-					<font color="red">${sameEmail }</font>
-					<font color="green">${sucessEmail }</font>
+					<font id="errorMail" color="red"></font>
+					<font id="successMail" color="green"></font>
 					<br/>
 					<br/><br/>
 				</div>
 				<div>
-					<span><input type="tel" name="phoneNum" placeholder="手機"></span>
+					<span><input id="phone" type="tel" name="phone" placeholder="手機" onblur="VerifyPhone ()" required="required"></span>
 					<br>
-					<font color="red">${samePhone }</font>
-					<font color="green">${sucessPhone }</font>
+					<font id="errorPhone" color="red"></font>
+					<font id="successPhone" color="green"></font>
 					<br/>
 					<br/><br/>
 				</div>
