@@ -15,31 +15,31 @@
 	<body>
 		<div id="loginContainer">
 			<div id="innerContainer">
-				<form method="post">
-						<!-- <div id="leftContainer">
-						</div> -->
-						<div id="rightContainer">
-							<h1>登入</h1>
-							<div>
-								<input type="text" name="userId" placeholder="請輸入帳號">
-								<br>
-								<font color="red">${errorMsg }</font>
-								<br/>
-								<br/><br/>
-							</div>
-							<div>
-								<input type="password" name="password" placeholder="請輸入密碼">
-								<br>
-								<font color="red">${wrongPassword }</font>
-								<br/>
-								<br/><br/>
-							</div>							
-							<div><span>忘記帳號?</span></div>
-							<div class="d-flex">
-								<a class="ml-auto" href="/signUp">成為會員</a>
-								<button>下一步</button>
-							</div>
-						</div>			
+				<form method="post" action = "/vegven/userLogin">
+					<!-- <div id="leftContainer">
+					</div> -->
+					<div id="rightContainer">
+						<h1>登入</h1>
+						<div>
+							<input type="text" name="account" placeholder="請輸入帳號">
+							<br>
+							<font color="red">${errorMsg }</font>
+							<br/>
+							<br/><br/>
+						</div>
+						<div>
+							<input type="password" name="password" placeholder="請輸入密碼">
+							<br>
+							<font color="red">${wrongPassword }</font>
+							<br/>
+							<br/><br/>
+						</div>							
+						<div><span>忘記帳號?</span></div>
+						<div class="d-flex">
+							<a class="ml-auto" href="/vegven/regester">成為會員</a>
+							<button>下一步</button>
+						</div>
+					</div>			
 				</form>				
 			</div>
 		</div>

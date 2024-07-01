@@ -2,7 +2,6 @@ package com.running.vegven.dao;
 
 import com.running.vegven.model.Userinf;
 import com.running.vegven.replyFormat.Result;
-import java.util.List;
 
 
 public interface RegesterDao {

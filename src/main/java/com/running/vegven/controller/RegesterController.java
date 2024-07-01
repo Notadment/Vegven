@@ -28,10 +28,10 @@ public class RegesterController {
 		this.regesterService = regesterService;
 	}
 	
-	@RequestMapping(value="/regester",method = RequestMethod.GET)
-	public String regester() {
-		return "regester";
-	}
+//	@RequestMapping(value="/regester",method = RequestMethod.GET)
+//	public String regester() {
+//		return "regester";
+//	}
 	
 	@PostMapping("/testRegester")
 	@ResponseBody
@@ -137,4 +137,6 @@ public class RegesterController {
 			return "errorMatchPhone";
 		}
 	}
+	
+	
 }

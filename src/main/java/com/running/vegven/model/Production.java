@@ -1,5 +1,6 @@
 package com.running.vegven.model;
 
+import java.sql.Blob;
 import java.util.Date;
 
 import jakarta.persistence.Column;
@@ -23,6 +24,10 @@ public class Production {
 	private Date shelvetime;
 	@Column(columnDefinition = "VARCHAR(2000)")
 	private String details;
+	
+	public Production() {
+	}
+	
 	public Production(Integer productid, String product, Integer amount, Integer price, Date shelvetime,
 			String details) {
 		super();

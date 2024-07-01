@@ -17,3 +17,11 @@
 	height: 500px;
 	border: 2px solid black;
 }
+
+#woman, #man, #hide, label{
+	margin-right: 5px
+}
+
+fieldset {
+	border: black;
+}

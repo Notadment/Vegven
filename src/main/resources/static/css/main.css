@@ -7,3 +7,16 @@
 #goods{
 	margin:0px 15%;
 }
+
+.name_font{
+	font: 12px bolder;
+}
+
+.img_font{
+	width: 100px;
+	height: 150px;
+}
+
+.amount_font{
+	color: red;  
+}

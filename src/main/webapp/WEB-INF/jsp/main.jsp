@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
@@ -33,10 +33,16 @@
 	<div id='body'>
 		<img id='horpic' src="/vegven/img/horizonPic.png">
 		<div id='goods' class='mt-4'>商品列表
-			<form action="">
-				
-			</form>
-			
+			<c:forEach var="product" items="${products}">
+				<div class="container">
+					<div class="name_font">${product.product}</div>
+					<div><img class="img_font" alt="" src=""></div>
+					<div class="d-flex">
+						<div class="amount_font">數量：${product.amount}</div>
+						<div class="price_font">${product.price}</div>
+					</div>
+				</div>
+			</c:forEach>		
 		</div>
 	</div>
 	<!--  <script src="/js/templates.js"></script>-->

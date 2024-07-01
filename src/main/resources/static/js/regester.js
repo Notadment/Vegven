@@ -11,7 +11,7 @@ async function VerifyAccount(){
 	if(account.value !="") {
 		try{
 			reply = await $.ajax({
-				url:"/vegven/verifyAccount?account="+account.value,
+				url:"/vegven/VerifyJPAAccount?account="+account.value,
 				type:"POST",
 				contentType:"application/json",
 				data:JSON.stringify({
@@ -53,7 +53,7 @@ async function VerifyAccount(){
 	if(password.value !="") {
 		try{
 			reply = await $.ajax({
-				url:"/vegven/verifyPassword?password="+password.value,
+				url:"/vegven/VerifyJPAPassword?password="+password.value,
 				type:"POST",
 				contentType:"application/json",
 				data:JSON.stringify({
@@ -65,13 +65,13 @@ async function VerifyAccount(){
 						errorPassword.innerText="密碼必須包含英文大小寫以及數字";
 						
 					}else{
-						if(response=="errorPassword"){
+						/*if(response=="errorPassword"){
 							errorPassword.innerText="密碼已被註冊";
-							
 						}else{
+							*/
 							successPassword.innerText="可使用的帳戶密碼";
 							
-						}
+						/*}*/
 					}
 				},
 				error: function(xhr, status, error) {
@@ -93,28 +93,30 @@ async function VerifyAccount(){
  async function matchAgainPassword(){
 	errorAgainPW.innerText = "";
 	successAgaainPW.innerText = "";
-	if(password.value == againPW.value ){
-		successAgaainPW.innerText = "與密碼輸入相符";
-		
-	}else{
-		errorAgainPW.innerText = "與密碼輸入不相符"
-	}
+		if(password.value != ""){
+			if(password.value == againPW.value ){
+				successAgaainPW.innerText = "與密碼輸入相符";
+				
+			}else{
+				errorAgainPW.innerText = "與密碼輸入不相符"
+			}			
+		}
  }
  
- let email = document.getElementById("mails");
+ let mail = document.getElementById("mails");
  let errorMail = document.getElementById("errorMail");
  let successMail = document.getElementById("successMail");
  async function VerifyEmail(){
 	errorMail.innerText="";
 	successMail.innerText="";
-	if(email.value !="") {
+	if(mail.value !="") {
 		try{
 			reply = await $.ajax({
-				url:"/vegven/verifyEmail?email="+email.value,
+				url:"/vegven/VerifyJPAMail?mail="+mail.value,
 				type:"POST",
 				contentType:"application/json",
 				data:JSON.stringify({
-					mail:email.value
+					mail:mail.value
 				}),
 				success:function(response){
 					console.log(response);
@@ -153,7 +155,7 @@ async function VerifyAccount(){
 	if(phone.value !="") {
 		try{
 			reply = await $.ajax({
-				url:"/vegven/VerifyPhone?phone="+phone.value,
+				url:"/vegven/VerifyJPAPhone?phone="+phone.value,
 				type:"POST",
 				contentType:"application/json",
 				data:JSON.stringify({
@@ -166,7 +168,7 @@ async function VerifyAccount(){
 						
 					}else{
 						if(response=="samePhone"){
-							errorPhone.innerText="此手機已被驗證";
+							errorPhone.innerText="此號碼已被註冊";
 							
 						}else{
 							successPhone.innerText="此號碼可使用";
