@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Insert title here</title>
+	<title>Vegven</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 	<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>	
@@ -32,17 +32,28 @@
 	</div>
 	<div id='body'>
 		<img id='horpic' src="/vegven/img/horizonPic.png">
-		<div id='goods' class='mt-4'>商品列表
-			<c:forEach var="product" items="${products}">
-				<div class="container">
-					<div class="name_font">${product.product}</div>
-					<div><img class="img_font" alt="" src=""></div>
-					<div class="d-flex">
-						<div class="amount_font">數量：${product.amount}</div>
-						<div class="price_font">${product.price}</div>
-					</div>
-				</div>
-			</c:forEach>		
+		<div id='goods' class="mt-4">商品列表
+			<div class="d-flex">
+				<c:forEach var="product" items="${products}">
+					<c:choose>
+						<c:when test="${count==5}">
+							<br>
+							<c:set var="count" value="0"/>
+						</c:when>
+					</c:choose>
+					<a href="/vegven/product/${product.product}" class="product">
+						<div class="container">
+							<div class="name_font">${product.product}</div>
+							<div><img class="img_font" alt="" src=""></div>
+							<div class="d-flex">
+								<div class="amount_font">數量：${product.amount}</div>
+								<div class="price_font">${product.price}</div>
+							</div>
+						</div>
+					</a>
+					<c:set var="count" value="${count + 1}"/>
+				</c:forEach>
+			</div>
 		</div>
 	</div>
 	<!--  <script src="/js/templates.js"></script>-->
